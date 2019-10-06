@@ -1,0 +1,3 @@
+[submodule "lacti-blog"]
+	path = lacti-blog
+	url = git@github.com:lacti/lacti-blog
