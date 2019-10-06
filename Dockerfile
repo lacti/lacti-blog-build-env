@@ -1,14 +1,13 @@
 FROM node:10-alpine
 
 RUN npm i -g yarn
-RUN apk add python g++ make
+RUN apk add git python g++ make
 
 WORKDIR /opt/
 COPY lacti-blog/package.json /opt/
 RUN yarn
 
 RUN apk del python g++ make
-RUN apk add git
 
 VOLUME /blog
 ENV GH_PAGES_REPO ${GH_PAGES_REPO}
