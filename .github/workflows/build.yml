@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: Update submodule
+        run: |
+          git submodule update --init --recursive
       - name: Build a docker image
         run: |
           docker build -t lacti/blog-build-env .
